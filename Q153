@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int min = nums[nums.size()-1];
+        for (int i: nums) {
+            if (i < min) min = i;
+        }
+        return min;
+    }
+};
+
+//Runtime: 3 ms (Beats 88.73% of submissions)
+//Memory: 10.3 MB
