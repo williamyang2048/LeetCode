@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        string word;
+        vector<string> v;
+        for (char c: s) {
+            if (c != ' ') {
+                word += c;
+            } else {
+                if (word.size() > 0) v.push_back(word);
+                word = "";
+            }
+        }
+        if (word.size() > 0) v.push_back(word);
+        return v[v.size()-1].size();
+    }
+};
+
+//Runtime: 0 MS (Beats 100% of solutions)
+//Memory: 6.9 MB
