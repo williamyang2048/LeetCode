@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        bool check = true;
+        int placement = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == target) {
+                return i;
+            }
+            if (nums[i] > target && check == true) {
+                check = false;
+                placement = i;
+            }
+        }
+        return (check == false) ? placement : nums.size();
+    }
+};
+
+//Runtime: 4 ms (Beats 84.9% of submissions
+//Memory: 9.8 MB
