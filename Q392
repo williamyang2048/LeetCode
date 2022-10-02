@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        size_t count = 0;
+        for (size_t i = 0; i < t.length(); i++) {
+            if (s[count] == t[i]) {
+                count += 1;
+            }
+        }
+        return (count == s.length()) ? true : false;
+    }
+};
+
+//Runtime: 0 ms (Beats 100% of submissions)
+//Memory: 6.4 MB (Beats 67.44% of submissions)
